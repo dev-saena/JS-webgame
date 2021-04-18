@@ -25,6 +25,21 @@ function 공색칠하기(숫자, 결과창){
     공.style.height = '20px';
     공.style.textAlign = 'center';
     공.style.marginRight = '10px';
+    공.style.fontSize = '12px';
+    공.style.lineHeight = '20px';
+    var 배경색;
+    if (숫자 <= 10) {
+        배경색 = 'red'
+    } else if (숫자 <= 20) {
+        배경색 = 'orange'
+    } else if (숫자 <= 30) {
+        배경색 = 'yellow'
+    } else if (숫자 <= 40) {
+        배경색 = 'blue'
+    } else {
+        배경색 = 'green'
+    }
+    공.style.background = 배경색;
     결과창.appendChild(공)
 }
 
