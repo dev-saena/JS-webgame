@@ -5,6 +5,7 @@ var 줄들 = [];
 var 턴 = 'X';
 var 결과 = document.createElement('div');
 
+// 틱택토 클릭했을 때 O,X턴 및 승리 체크
 var 비동기콜백 = function(e) { 
     var 몇줄 = 줄들.indexOf(e.target.parentNode);
     var 몇칸 = 칸들[몇줄].indexOf(e.target);
@@ -72,7 +73,7 @@ var 비동기콜백 = function(e) {
     }
 }
 
-
+// 틱택토 3x3 칸 만들기
 for (var i = 1; i <= 3; i+= 1) {
     var 줄 = document.createElement('tr');
     줄들.push(줄);
