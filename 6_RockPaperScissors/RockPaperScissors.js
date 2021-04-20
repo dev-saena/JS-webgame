@@ -1,17 +1,18 @@
-var 이미지좌표 = '0';
+var 이미지좌표 = '0'; //left값
 var 가위바위보 = { //딕셔너리 자료구조
     바위: '0',
     가위: '-142px',
     보: '-284px'
 }
 
-console.log(Object.entries(가위바위보));
+// 클릭했을 때의 이미지좌표 값을 가위,바위,보 반환
 function 컴퓨터의선택(이미지좌표) {
     return Object.entries(가위바위보).find(function(v) {
         return v[1] === 이미지좌표;
     })[0];
 }
 
+// 이미지 스프라이트를 이용하여 0.1초 간격으로 묵찌빠순으로 돌아가게 함
 var 인터벌;
 function 인터벌메이커() {
     인터벌 = setInterval(function () {
@@ -35,6 +36,7 @@ var 점수표 = {
     보: -1
 }
 
+// 버튼을 클릭하면 이미지가 잠깐 멈추고 승패결과가 나옴
 document.querySelectorAll('.btn').forEach(function(btn){
     btn.addEventListener('click', function() {
         clearInterval(인터벌);
@@ -47,7 +49,7 @@ document.querySelectorAll('.btn').forEach(function(btn){
         var 점수차 = 나의점수 - 컴퓨터점수;
         if (점수차 === 0) {
             console.log('비겼습니다');
-        } else if ([-1, 2].includes(나의점수 - 컴퓨터점수)) {
+        } else if ([-1, 2].includes(점수차)) {
             console.log('이겼습니다');
         } else {
             console.log('졌습니다 ㅠㅠ');
