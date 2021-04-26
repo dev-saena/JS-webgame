@@ -1,9 +1,9 @@
 var 바디 = document.body;
-var 테이블 = document.createElement('table');
+var 테이블 = document.querySelector('table');
 var 칸들 = [];
 var 줄들 = [];
 var 턴 = 'X';
-var 결과 = document.createElement('div');
+var 결과 = document.querySelector('#result');
 
 // 틱택토 클릭했을 때 O,X턴 및 승리 체크
 var 비동기콜백 = function(e) { 
@@ -87,5 +87,5 @@ for (var i = 1; i <= 3; i+= 1) {
     테이블.appendChild(줄);
 }
 
-바디.appendChild(테이블);
-바디.appendChild(결과);
+// *****칸도 html로 만들면 어떨까?*****
+// *****무승부일 때 무승무 표시와 새 게임 되게 만들기*****
